@@ -1,6 +1,7 @@
 package com.example.bestgifs
 
 import android.app.Application
+import android.content.Context
 import com.example.bestgifs.data.db.AppDatabase
 import com.example.bestgifs.di.component.ApplicationComponent
 import com.example.bestgifs.di.component.DaggerApplicationComponent
@@ -16,7 +17,9 @@ class App : Application() {
         lateinit var applicationComponent: ApplicationComponent
             private set
 
-        fun getDatabase(): AppDatabase = applicationComponent.appDatabase()
+        fun getContext() = applicationComponent.getContext()
+
+        fun getDatabase() = applicationComponent.appDatabase()
     }
 
     init {

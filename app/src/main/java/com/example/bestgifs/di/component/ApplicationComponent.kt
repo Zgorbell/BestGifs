@@ -1,5 +1,6 @@
 package com.example.bestgifs.di.component
 
+import android.content.Context
 import com.example.bestgifs.App
 import com.example.bestgifs.data.db.AppDatabase
 import com.example.bestgifs.data.helper.GifReloadStateHelper
@@ -18,6 +19,8 @@ interface ApplicationComponent{
     fun inject(app: App)
 
     fun injectMvpPresenter(presenter: GifPresenter)
+
+    fun getContext(): Context
 
     fun appDatabase() : AppDatabase
 

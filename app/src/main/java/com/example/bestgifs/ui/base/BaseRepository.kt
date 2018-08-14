@@ -1,12 +1,16 @@
 package com.example.bestgifs.ui.base
 
 
+import com.example.bestgifs.App
 import com.example.bestgifs.data.retrofit.GifApi
 import com.example.bestgifs.data.retrofit.model.GiphyResponse
 import com.example.bestgifs.ui.gif.GifPresenter
 import com.giphy.sdk.core.network.api.GPHApi
 import com.giphy.sdk.core.network.api.GPHApiClient
+import io.reactivex.Observable
+import io.reactivex.Scheduler
 import io.reactivex.Single
+import io.reactivex.schedulers.Schedulers
 import retrofit2.Retrofit
 
 
@@ -29,5 +33,10 @@ class BaseRepository(var retrofit : Retrofit){
                 .downloadGifSearch(API_GYPHY_KEY, search, count, start)
     }
 
+    fun deleteAllFromDb(){
+        Observable.fromCallable { App.getDatabase().photoDao().deleteAll() }
+                .subscribeOn(Schedulers.io())
+                .subscribe()
+    }
 
 }

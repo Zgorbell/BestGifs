@@ -6,14 +6,15 @@
         android:id="@+id/action_search"
         android:icon="@drawable/ic_search_black_24dp"
         android:title="@string/action_search"
-        app:showAsAction="ifRoom|collapseActionView"
+        app:showAsAction="always|collapseActionView"
         app:actionViewClass="android.support.v7.widget.SearchView" />
 
     <item
         android:id="@+id/action_refresh"
         android:icon="@drawable/ic_refresh_black_24dp"
         android:title="@string/load"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="always"
+        app:actionViewClass="android.widget.ImageButton" />
 
 
 </menu>

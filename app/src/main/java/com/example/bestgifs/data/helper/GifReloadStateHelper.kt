@@ -6,7 +6,6 @@ class GifReloadStateHelper(){
     companion object {
         const val RELOAD = 100
         @JvmStatic val RELOAD_SEARCH = 101
-
     }
 
     fun isReloadSearch() : Boolean{
